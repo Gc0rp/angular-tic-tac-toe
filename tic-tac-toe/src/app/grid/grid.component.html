@@ -1,0 +1,17 @@
+<div id="grid">
+    <div class="row">
+        <app-box [player]="grid[0][0]" (click)="boxClicked(0,0)"></app-box>
+        <app-box [player]="grid[0][1]" (click)="boxClicked(0,1)"></app-box>
+        <app-box [player]="grid[0][2]" (click)="boxClicked(0,2)"></app-box>
+    </div>
+    <div class="row">
+        <app-box [player]="grid[1][0]" (click)="boxClicked(1,0)"></app-box>
+        <app-box [player]="grid[1][1]" (click)="boxClicked(1,1)"></app-box>
+        <app-box [player]="grid[1][2]" (click)="boxClicked(1,2)"></app-box>
+    </div>
+    <div class="row">
+        <app-box [player]="grid[2][0]" (click)="boxClicked(2,0)"></app-box>
+        <app-box [player]="grid[2][1]" (click)="boxClicked(2,1)"></app-box>
+        <app-box [player]="grid[2][2]" (click)="boxClicked(2,2)"></app-box>
+    </div>
+</div>
