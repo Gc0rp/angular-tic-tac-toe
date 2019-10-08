@@ -12,6 +12,10 @@ export class GridComponent implements OnInit {
   grid: string[][] = [["", "", ""], ["", "", ""], ["", "", ""]];
 
   playerPlaying: string = "X"
+
+  checkForWin(){
+    
+  }
   boxClicked(x,y){
     this.grid[x][y] = this.playerPlaying;
 
@@ -20,6 +24,8 @@ export class GridComponent implements OnInit {
     } else{
       this.playerPlaying = "X";
     }
+
+    this.checkForWin();
   }
   constructor() { }
 
