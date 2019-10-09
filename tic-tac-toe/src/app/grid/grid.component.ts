@@ -13,36 +13,46 @@ export class GridComponent implements OnInit {
                       ["", "", ""], 
                       ["", "", ""]];
 
-  playerPlaying: string = "X"
+  playerPlaying: string = "X";
+  playerWon: boolean = false;
+  winningPlayer: string = "";
 
   checkForWin(){
 
     
     for(let i = 0; i < 3; i++) {
         if(this.grid[0][i] === this.grid[1][i] && this.grid[0][i] === this.grid[2][i] && (this.grid[0][i] !== "") ) {             // Vertical Check
-          alert(this.grid[i][0] + " Won.");
+          this.winningPlayer = this.grid[i][0];
+          this.playerWon = true;
+
         } 
         else if (this.grid[i][0] === this.grid[i][1] && this.grid[i][0] === this.grid[i][2] && (this.grid[i][0] !== "")) {        // Horizontal Check
-          alert(this.grid[i][0] + " Won.");
+          this.winningPlayer = this.grid[i][0];
+          this.playerWon = true;
         }
     }
     // Diagonal Check
     if(this.grid[0][0] === this.grid[1][1] && this.grid[0][0] === this.grid[2][2] && (this.grid[0][0] !== "")) {
-      alert(this.grid[0][0] + " Won.");
+      this.winningPlayer = this.grid[0][0];
+      this.playerWon = true;
     } else if (this.grid[0][2] === this.grid[1][1] && this.grid[0][2] === this.grid[2][0] && (this.grid[0][2] !== "")){
-      alert(this.grid[0][2] + " Won.");
+      this.winningPlayer = this.grid[0][2];
+      this.playerWon = true;
     }
   }
   boxClicked(x,y){
-    this.grid[x][y] = this.playerPlaying;
+      if(this.grid[x][y] === ""){
+        this.grid[x][y] = this.playerPlaying;
 
-    if(this.playerPlaying === "X"){
-      this.playerPlaying = "O";
-    } else{
-      this.playerPlaying = "X";
+      if(this.playerPlaying === "X"){
+        this.playerPlaying = "O";
+      } else{
+        this.playerPlaying = "X";
+      }
+
+      this.checkForWin();
     }
-
-    this.checkForWin();
+    
   }
   constructor() { }
 

@@ -1,11 +1,14 @@
 <div id="grid">
-    <div class="row">
+    <div class="row" style="border-bottom: 20px solid white;">
         <app-box [player]="grid[0][0]" (click)="boxClicked(0,0)"></app-box>
+        <span class="seperator" style="margin-left: 100px; margin-top: none;"></span>
         <app-box [player]="grid[0][1]" (click)="boxClicked(0,1)"></app-box>
+        <span class="seperator" style="margin-left: 210px; margin-top: none;"></span>
         <app-box [player]="grid[0][2]" (click)="boxClicked(0,2)"></app-box>
     </div>
-    <div class="row">
+    <div class="row" style="border-bottom: 20px solid white;">
         <app-box [player]="grid[1][0]" (click)="boxClicked(1,0)"></app-box>
+        
         <app-box [player]="grid[1][1]" (click)="boxClicked(1,1)"></app-box>
         <app-box [player]="grid[1][2]" (click)="boxClicked(1,2)"></app-box>
     </div>
@@ -13,5 +16,10 @@
         <app-box [player]="grid[2][0]" (click)="boxClicked(2,0)"></app-box>
         <app-box [player]="grid[2][1]" (click)="boxClicked(2,1)"></app-box>
         <app-box [player]="grid[2][2]" (click)="boxClicked(2,2)"></app-box>
+    </div>
+
+    <div *ngIf="playerWon==true">
+        <h1>{{winningPlayer}} has won the game.</h1>
+        <button type="button" style="border: none">Reset</button>
     </div>
 </div>
