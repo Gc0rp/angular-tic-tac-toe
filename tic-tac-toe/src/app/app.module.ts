@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 import { GameBoardComponent } from './game-board/game-board.component';
 import { BoxComponent } from './box/box.component';
-
+import {RouterModule, Routes} from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +14,10 @@ import { BoxComponent } from './box/box.component';
     BoxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: 'grid', component: GridComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

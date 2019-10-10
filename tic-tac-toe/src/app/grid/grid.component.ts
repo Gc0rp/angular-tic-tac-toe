@@ -16,6 +16,7 @@ export class GridComponent implements OnInit {
   playerPlaying: string = "X";
   playerWon: boolean = false;
   winningPlayer: string = "";
+  bestOfEntered: boolean = false;
 
   checkForWin(){
 
@@ -52,7 +53,6 @@ export class GridComponent implements OnInit {
 
       this.checkForWin();
     }
-    
   }
   constructor() { }
 

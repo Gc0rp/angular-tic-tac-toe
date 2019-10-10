@@ -1,7 +1,20 @@
 <div id="board">
-    <app-grid></app-grid>
     <div>
-        <!-- <button type="button" style="border: none">Reset</button> -->
+        <h1>Best of : </h1>
+        <input #bestOf id="bestOfScore" type="text" placeholder="Enter in the best of" />
+        <button type="button" (click)="displayGrid(bestOf.value)">Enter</button>
+        <div *ngIf="validInput==true">
+            <app-grid></app-grid>
+            <div id="stats" style="display: flex; padding-top: 50px;">
+                <div class="playerStat">
+                    <h4>Player 1:</h4>
+                    <p></p>
+                </div>
+                <div class="playerStat">
+                    <h4>Player 2:</h4>
+                    <p></p>
+                </div>
+            </div>    
+        </div>
     </div>
-  
 </div>

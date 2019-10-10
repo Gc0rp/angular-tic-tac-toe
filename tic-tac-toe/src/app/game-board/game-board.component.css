@@ -3,4 +3,23 @@
     height: 700px;
     margin: auto;
     padding-top: 50px;
+    text-align: center;
+}
+
+#bestOfScore{
+    width: 200px;
+    height: 20px;
+    background-color: white;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#stats{
+    text-align: center;
+}
+
+.playerStat{
+    margin: 0px 100px;
 }
