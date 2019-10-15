@@ -17,6 +17,8 @@ export class GridComponent implements OnInit {
   playerWon: boolean = false;
   winningPlayer: string = "";
   bestOfEntered: boolean = false;
+  blocksFilled: number = 0;
+  disableBoard: boolean = true;
 
   checkForWin(){
 
@@ -51,8 +53,15 @@ export class GridComponent implements OnInit {
         this.playerPlaying = "X";
       }
 
+      this.blocksFilled += 1;
       this.checkForWin();
     }
+  }
+
+  resetGrid(){
+    this.grid = [["", "", ""], ["", "", ""], ["", "", ""]];
+    this.playerWon = false;
+    this.blocksFilled = 0;
   }
   constructor() { }
 

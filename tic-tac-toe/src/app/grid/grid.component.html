@@ -1,6 +1,6 @@
 <div id="grid">
     <div class="row" style="border-bottom: 20px solid white;">
-        <app-box [player]="grid[0][0]" (click)="boxClicked(0,0)"></app-box>
+        <app-box [player]="grid[0][0]" (click)="boxClicked(0,0)" ng-disabled="disableBoard"></app-box>
         <span class="seperator" style="margin-left: 100px; margin-top: none;"></span>
         <app-box [player]="grid[0][1]" (click)="boxClicked(0,1)"></app-box>
         <span class="seperator" style="margin-left: 210px; margin-top: none;"></span>
@@ -8,7 +8,7 @@
     </div>
     <div class="row" style="border-bottom: 20px solid white;">
         <app-box [player]="grid[1][0]" (click)="boxClicked(1,0)"></app-box>
-        
+
         <app-box [player]="grid[1][1]" (click)="boxClicked(1,1)"></app-box>
         <app-box [player]="grid[1][2]" (click)="boxClicked(1,2)"></app-box>
     </div>
@@ -18,8 +18,14 @@
         <app-box [player]="grid[2][2]" (click)="boxClicked(2,2)"></app-box>
     </div>
 
+
+</div>
+<div style="padding-top:50px;">
     <div *ngIf="playerWon==true">
         <h1>{{winningPlayer}} has won the game.</h1>
-        <button type="button" style="border: none">Reset</button>
+    </div>
+    
+    <div *ngIf="blocksFilled==9 || playerWon==true">
+        <button type="button" style="border: 3px solid white" (click)="resetGrid()">Reset</button>
     </div>
 </div>
